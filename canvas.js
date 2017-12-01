@@ -17,20 +17,23 @@ var color = ['rgb(0,0,0)' // Black
 					,'rgb(0,255,0)' // Green
 					,'rgb(0,0,255)' // Blue
  					,'rgb(128,0,0)' // Maroon?
- 					,'rgb(255,255,255)']; // White
+ 					,'rgb(255,255,255)'
+ 					,'rgb(128,0,0)'
+ 					,'rgb(128,128,0)'
+ 					,'rgb(128,0,128)'
+ 					,'rgb(128,0,255)'
+ 					,'rgb(128,128,128)']; // White
 
 function initializeCanvas() {
 	/* Filling in color pallete on right */
-	for(var i = 0; i < 5; i ++){
+	for(var i = 0; i < 10; i ++){
 		context.fillStyle = color[i];
 		context.fillRect(canvas.width-40,i*40,40,40);
 	}
 
-	/* Filling in empty space on color pallette */
-	for(var i = 5; i < 20; i ++){
-		context.fillStyle = 'rgba(0,0,0,0.5)';
-		context.fillRect(canvas.width-40,i*40,40,40);
-	}
+	/* Draws a line so white is seperated from canvas */
+	context.fillStyle = color[0];
+	context.fillRect(canvas.width-41,0,1,400);
 
 	context.fillStyle = color[0];
 
@@ -38,7 +41,6 @@ function initializeCanvas() {
 }
 
 function mouseClick(event) {
-
 	/* Get mouse position */
 	var pos = getMousePos(event);
 
@@ -54,7 +56,7 @@ function mouseClick(event) {
     	}
 	    
 	} else {
-		if (pos.y < 160) {
+		if (pos.y < 400) {
 			pickColor(pos.x, pos.y);
 		}
 	}
