@@ -1,0 +1,33 @@
+<html>
+
+<head>
+
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+
+<script>
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD3cGPVywJtRnm4vQMtwRM9DVQloAmyCso",
+    authDomain: "boiler-canvas.firebaseapp.com",
+    databaseURL: "https://boiler-canvas.firebaseio.com",
+    projectId: "boiler-canvas",
+    storageBucket: "boiler-canvas.appspot.com",
+    messagingSenderId: "985213101820"
+  };
+
+  firebase.initializeApp(config);
+
+  /* Create string of all 5s (white) */
+  canv = Array(9601).join("5");
+
+  /* Set the canvas as the array */
+  firebase.database().ref("map/").set({
+		  pixels: canv
+  });
+
+  alert("It is done.");
+
+</script>
+</head>
+</html>
