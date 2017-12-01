@@ -1,0 +1,38 @@
+<style type="text/css">
+	
+	body{
+		margin : 15px;
+		background-color: #fff;
+    	color: #777;
+	}
+
+	h1 {
+	    font-family: 'Crete Round', serif;
+	    font-weight: bold;
+	    color: #444;
+	    font-size: 45px;
+	    margin-bottom: 20px;
+	}
+	
+	header {
+   		height: 100px;
+	}
+	header h1 {
+   		float: left;
+   		margin-top: 32px;
+	}
+	header h1 .color {
+    	color: #02b8dd;
+	}
+
+	.wrapper {
+	    margin: 0 auto;
+	    padding: 0 10px;
+	    width: 300px;
+	}
+
+	canvas{
+		border: 1px solid black;
+	}
+
+</style>

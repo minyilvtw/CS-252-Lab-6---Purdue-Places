@@ -4,22 +4,21 @@
 	
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 	<meta charset="UTF-8">
-	<title>Canvas</title>
-
-	<style type="text/css">
-		canvas{
-			border: 1px solid black;
-		}
-		body{
-			margin : 15px;
-		}
-	</style>
+	<title>Boiler Canvas</title>
+	<link rel="stylesheet" type="text/css" href="reset.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
 
 </head>
 	
 <body>
-	
-		<canvas></canvas><br>
+		<header>
+	    <div class="wrapper">
+	        <h1>Boiler Canvas<span class="color"></span></h1>
+	    </div>
+		</header>
+
+		<center><canvas></canvas><br>
 		<input type="text" name="email">
 		<input type="text" name="name">
 		<button type="button" onclick="getCanvas()">- Update Canvas -</button>
@@ -27,6 +26,7 @@
 		<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
 		<script src="backend.js"></script>
 		<script src="canvas.js"></script>	
+		</center>
 	
 </body>
 
