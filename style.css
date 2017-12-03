@@ -1,16 +1,48 @@
 <style type="text/css">
 	
+body{text-align: center;background: #f2f6f8;}
+.img{position:absolute;z-index:1;}
+
+
+canvas {
+	position:relative;
+	z-index: 20;
+}
+
+
 	body{
 		margin : 15px;
-    	background-image:url(https://s3.amazonaws.com/Syntaxxx/background-gold-bokeh.jpg);
+    	background-image:url(purdue.png);
 	}
 
 	h1 {
 	    font-family: 'Crete Round', serif;
 	    font-weight: bold;
-	    color: #444;
-	    font-size: 45px;
+	    color: white;
+	    font-size: 65px;
 	    margin-bottom: 20px;
+
+	    text-shadow:
+       5px 5px 0 #000,
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+	}
+
+	h2 {
+	    font-family: 'Crete Round', serif;
+	    font-weight: bold;
+	    color: white;
+	    font-size: 25px;
+	    margin-bottom: 20px;
+
+	     text-shadow:
+       2px 2px 0 #000,
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
 	}
 	
 	header {
@@ -22,12 +54,6 @@
 	}
 	header h1 .color {
     	color: #02b8dd;
-	}
-
-	.wrapper {
-	    margin: 0 auto;
-	    padding: 0 10px;
-	    width: 300px;
 	}
 
 	canvas{
