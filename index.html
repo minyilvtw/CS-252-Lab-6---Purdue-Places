@@ -22,19 +22,23 @@
 		<input id="textfield_email" name="email" type="text" placeholder="Email">
 		<input id="textfield_name" name="name" type="text" placeholder="Name">
 			
+		<!--Saving textdata into vars to aid w/ backend-->
 		<script>
 		var email_ = document.getElementById("textfield_email").value;
 		var userName = document.getElementById("textfield_name").value;
 		</script>
 			
-		<script>function printName() {
-		document.write('Current User:	<span id="textfield_name" class="color"></span>');
-						}</script>
+		<p id="userName_"> Current User:  </p>
+			
+		<script>
+		function printName() {
+		//document.write('Current User:	<span id="textfield_name" class="color"></span>');
+			document.getElementById("userName_").innerHTML = userName;
+						}
+		</script>
 			
 		<button type="button" onclick="getCanvas(); printName();">- Update Canvas -</button>
-			
-		<!--var email_ = document.getElementById("textfield_email").value;
-		var userName = document.getElementById("textfield_name").value;-->
+		
 
 		<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
 		<script src="backend.js"></script>
