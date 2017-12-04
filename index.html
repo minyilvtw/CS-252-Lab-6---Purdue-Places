@@ -10,7 +10,8 @@
 	<link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
 
 </head>
-	
+	<!--Adding Jquery access-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 <body>
 	
 		<div id="container">	
@@ -20,15 +21,18 @@
 		<h2>Let's make a _____<span class="color"></span></h2>
 		<input id="textfield_email" name="email" type="text" placeholder="Email">
 		<input id="textfield_name" name="name" type="text" placeholder="Name">
+			
+		<script>var email_ = document.getElementById("textfield_email").value;</script>
+		<script>var userName = document.getElementById("textfield_name").value;</script>
+		
+		<p id="name_"> Current User:  </p>
 		
 		<script>function printName() {
-		document.write('Current User:	<span id="textfield_name" class="color"></span>');
+		//document.write('Current User:	<span id="textfield_name" class="color"></span>');
+			$("name_").html(userName)
 						}</script>
 			
 		<button type="button" onclick="getCanvas(); printName();">- Update Canvas -</button>
-			
-		<!--var email_ = document.getElementById("textfield_email").value;
-		var userName = document.getElementById("textfield_name").value;-->
 
 		<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
 		<script src="backend.js"></script>
