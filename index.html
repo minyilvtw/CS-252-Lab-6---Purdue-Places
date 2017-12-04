@@ -21,20 +21,15 @@
 		<h2>Let's make a _____<span class="color"></span></h2>
 		<input id="textfield_email" name="email" type="text" placeholder="Email">
 		<input id="textfield_name" name="name" type="text" placeholder="Name">
-			
-		//<script>
-		//var email_ = document.getElementById("textfield_email").value;
-		//var userName = document.getElementById("textfield_name").value;
-		
-		
-		<p id="name_"> Current User:  </p>
 		
 		<script>function printName() {
-		
-			$("name_").html(userName)
+		document.write('Current User:	<span id="textfield_name" class="color"></span>');
 						}</script>
 			
 		<button type="button" onclick="getCanvas(); printName();">- Update Canvas -</button>
+			
+		<!--var email_ = document.getElementById("textfield_email").value;
+		var userName = document.getElementById("textfield_name").value;-->
 
 		<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
 		<script src="backend.js"></script>
