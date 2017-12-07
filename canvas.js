@@ -16,8 +16,8 @@ var color = ['rgb(0,0,0)', // Black
 	     'rgb(136,136,136)', // Gray
 	     'rgb(255,255,255)', // White
 	     'rgb(229,0,0)', // Red
+	     'rgb(255,165,0)', // Orange
 	     'rgb(194,142,14)', // Purdue Gold
-	     'rgb(160,106,66)', // Brown
 	     'rgb(229,217,0)', // Yellow
 	     'rgb(2,190,1)', // Green
 	     'rgb(0,0,234)', // Blue
