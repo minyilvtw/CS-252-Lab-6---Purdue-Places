@@ -18,31 +18,29 @@
 		<center>
 		<h1>Boiler Canvas<span class="color"></span></h1>
 		<canvas id = "canvas"></canvas><br>
-		<h2>Let's make a _____<span class="color"></span></h2>
-		<input id="textfield_email" name="email" type="text" placeholder="Email">
-		<input id="textfield_name" name="name" type="text" placeholder="Name">
+		<span>
+			<table>
+				<tr>
+					<td style="vertical-align: middle;">
+						<img id="stoplight" src="stoplight.gif" width="50px" height="50px">
+					</td>
+					<td style="width: 100px;"></td>
+					<td style="vertical-align: bottom;">
+						<h2>Let's make a _____</h2>
+					</td>
+					<td style="width: 150px;"></td>
+				</tr>
+			</table>
+		</span>
 			
 		<!--Saving textdata into vars to aid w/ backend-->
-		<script>
-		var email_ = document.getElementById("textfield_email").value;
-		var userName = document.getElementById("textfield_name").value;
-		</script>
-			
-		<p id="userName_"> Current User:  </p>
-			
-		<script>
-		function printName() {
-			//document.write('Current User:	<span id="textfield_name" class="color"></span>');
-			alert(document.getElementById("userName_").innerHTML = userName);
-						}
-		</script>
-			
-		<button type="button" onclick="getCanvas(); printName();">- Update Canvas -</button>
-		
-
+		<button type="button" onclick="getCanvas();">- Update Canvas -</button>
 		<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
 		<script src="backend.js"></script>
-		<script src="canvas.js"></script>	
+		<script src="canvas.js"></script>
+		<script>
+			setInterval(function(){getCanvas();}, 2000); // Keeps refreshed!
+		</script>	
 		</center>
 	
 		</div>

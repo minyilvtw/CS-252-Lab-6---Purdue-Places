@@ -4,7 +4,7 @@ document.addEventListener("click", mouseClick);
 
 var canvas = document.querySelector('canvas');
 
-canvas.width = 650; 	// 120 'px' + 10 'px' (pallette)
+canvas.width = 660; 	// 120 'px' + 10 'px' (pallette)
 canvas.height = 400; 	// 80  'px'
 var pixWidth = 120;
 var pixHeight = 80;
@@ -28,16 +28,16 @@ function initializeCanvas() {
 	/* Filling in color pallete on right */
 	for(var i = 0; i < 10; i ++){
 		context.fillStyle = color[i];
-		context.fillRect(canvas.width-40,i*40,40,40);
+		context.fillRect(canvas.width-50,i*40,40,40);
 	}
 
 	/* Draws a line so white is seperated from canvas */
 	context.fillStyle = color[0];
-	context.fillRect(canvas.width-50,0,10,400);
-
+	context.fillRect(canvas.width-60,0,10,400);
+	context.fillRect(canvas.width-10,0,10,400);
 	context.fillStyle = color[0];
 
-	setInterval(enablePaint, 3000);
+	//setInterval(enablePaint, 3000);
 }
 
 function mouseClick(event) {
@@ -45,12 +45,16 @@ function mouseClick(event) {
 	var pos = getMousePos(event);
 
     //console.log("second:"+x+" "+y);
-    if ((pos.x > 0 && pos.y > 0) && (pos.x < canvas.width - 40 && pos.y < canvas.height)) {
+    if ((pos.x > 0 && pos.y > 0) && (pos.x < canvas.width - 50 && pos.y < canvas.height)) {
 	    
     	if (canPaint) {
-    		setPixel(round(pos.x/5, 0), round(pos.y/5, 0), currColor);
     		canPaint = false;
-			console.log("DRAW: (" + round(pos.x/5, 0) + ", " + round(pos.y/5, 0) + ")");
+    		setPixel(round(pos.x/5, 0), round(pos.y/5, 0), currColor);
+			//console.log("DRAW: (" + round(pos.x/5, 0) + ", " + round(pos.y/5, 0) + ")");
+
+			// Replays 'stoplight' animation
+			document.getElementById('stoplight').src='stoplight.gif';
+			delayEnablePaint();
     	} else {
     		console.log("WAIT");
     	}
@@ -60,6 +64,7 @@ function mouseClick(event) {
 			pickColor(pos.y);
 		}
 	}
+
 }
 
 /* paint pixel given color (should be int) */
@@ -72,7 +77,7 @@ function paint(x, y, colorIndex){
 function pickColor(y){
 	currColor = Math.round(((y-20)/40));
 	context.fillStyle = color[currColor];
-	context.fillRect(canvas.width-45,0,5,400);
+	context.fillRect(canvas.width-10,0,10,400);
 }
 
 /* Colors the entire canvas using the 'canv' string */
@@ -88,8 +93,14 @@ function colorCanvas(canv){
 	}
 }
 
+function delayEnablePaint() {
+	console.log("Start Timer...");
+    setTimeout(enablePaint, 2000);
+}
+
 function enablePaint(){
 	canPaint = true;
+	console.log("Timer done!");
 }
 
 function getMousePos(event) {
