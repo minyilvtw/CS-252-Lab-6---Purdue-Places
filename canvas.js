@@ -12,17 +12,17 @@ var pixHeight = 80;
 var context = canvas.getContext('2d');
 var currColor = 0;
 var canPaint = true;
-var color = ['rgb(0,0,0)' // Black
-					,'rgb(255,0,0)' // Red
-					,'rgb(0,255,0)' // Green
-					,'rgb(0,0,255)' // Blue
- 					,'rgb(128,0,0)' // Maroon?
- 					,'rgb(255,255,255)'
- 					,'rgb(128,0,0)'
- 					,'rgb(128,128,0)'
- 					,'rgb(128,0,128)'
- 					,'rgb(128,0,255)'
- 					,'rgb(128,128,128)']; // White
+var color = ['rgb(0,0,0)', // Black
+	     'rgb(34,34,34)', // Gray
+	     'rgb(255,255,255)', // White
+	     'rgb(0,229,0)', // Red
+	     'rgb(229,149,0)', // Orange
+	     'rgb(160,106,66)', // Brown
+	     'rgb(229,217,0)', // Yellow
+	     'rgb(2,190,1)', // Green
+	     'rgb(0,0,234)', // Blue
+	     'rgb(130,0,128)', // Purple
+	     'rgb(152,112,13)']; // Gold
 
 function initializeCanvas() {
 	/* Filling in color pallete on right */
