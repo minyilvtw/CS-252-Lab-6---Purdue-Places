@@ -13,9 +13,9 @@ var context = canvas.getContext('2d');
 var currColor = 0;
 var canPaint = true;
 var color = ['rgb(0,0,0)', // Black
-	     'rgb(34,34,34)', // Gray
+	     'rgb(136,136,136)', // Gray
 	     'rgb(255,255,255)', // White
-	     'rgb(0,229,0)', // Red
+	     'rgb(229,0,0)', // Red
 	     'rgb(229,149,0)', // Orange
 	     'rgb(160,106,66)', // Brown
 	     'rgb(229,217,0)', // Yellow
@@ -33,7 +33,7 @@ function initializeCanvas() {
 
 	/* Draws a line so white is seperated from canvas */
 	context.fillStyle = color[0];
-	context.fillRect(canvas.width-41,0,1,400);
+	context.fillRect(canvas.width-50,0,10,400);
 
 	context.fillStyle = color[0];
 
@@ -65,12 +65,14 @@ function mouseClick(event) {
 /* paint pixel given color (should be int) */
 function paint(x, y, colorIndex){
 	context.fillStyle = color[colorIndex];
-	context.fillRect(x,y,10,10);
+	context.fillRect(x,y,5,5);
 }
 
 /* Get index from x, y */
 function pickColor(y){
-	currColor = Math.round((y/40));
+	currColor = Math.round(((y-20)/40));
+	context.fillStyle = color[currColor];
+	context.fillRect(canvas.width-45,0,5,400);
 }
 
 /* Colors the entire canvas using the 'canv' string */
