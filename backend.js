@@ -50,14 +50,14 @@
 	  firebase.database().ref('map/').once('value').then(function(snapshot) {
       map = snapshot.val().pixels;
 
-      console.log("map["+index+"] used to be: "+ map[index]);
+      //console.log("map["+index+"] used to be: "+ map[index]);
 
-      console.log("Setting to "+val+"...")
+      //console.log("Setting to "+val+"...")
 
       /* Set index to new val */
       map = map.replaceAt(index, val.toString());
 
-      console.log("Now: map["+index+"] is: "+ map[index]);
+      //console.log("Now: map["+index+"] is: "+ map[index]);
 
       /* Update firebase */
       setCanvas(map);
