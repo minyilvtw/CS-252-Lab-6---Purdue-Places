@@ -4,7 +4,7 @@ document.addEventListener("click", mouseClick);
 
 var canvas = document.querySelector('canvas');
 
-canvas.width = 660; 	// 120 'px' + 10 'px' (pallette)
+canvas.width = 660; 	// 120 'px' + 14 'px' (pallette)
 canvas.height = 400; 	// 80  'px'
 var pixWidth = 120;
 var pixHeight = 80;
@@ -36,6 +36,12 @@ function initializeCanvas() {
 	context.fillRect(canvas.width-60,0,10,400);
 	context.fillRect(canvas.width-10,0,10,400);
 	context.fillStyle = color[0];
+
+	base_image = new Image();
+  	base_image.src = 'loading.png';
+  	base_image.onload = function(){
+    	context.drawImage(base_image,0,0);
+  	}
 
 	//setInterval(enablePaint, 3000);
 }
