@@ -57,7 +57,7 @@ function mouseClick(event) {
 	    
 	} else {
 		if (pos.y < 400) {
-			pickColor(pos.x, pos.y);
+			pickColor(pos.y);
 		}
 	}
 }
@@ -69,8 +69,8 @@ function paint(x, y, colorIndex){
 }
 
 /* Get index from x, y */
-function pickColor(x, y){
-	currColor = Math.round((y/40)) - 1;
+function pickColor(y){
+	currColor = Math.round((y/40));
 }
 
 /* Colors the entire canvas using the 'canv' string */
