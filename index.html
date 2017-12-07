@@ -40,6 +40,15 @@
 		<script src="canvas.js"></script>
 		<script>
 			setInterval(function(){getCanvas();}, 2000); // Keeps refreshed!
+			
+			function clearSelection() {
+    				if(document.selection && document.selection.empty) {
+        				document.selection.empty();
+    				} else if(window.getSelection) {
+        				var sel = window.getSelection();
+        				sel.removeAllRanges();
+    				}
+			}
 		</script>	
 		</center>
 	
