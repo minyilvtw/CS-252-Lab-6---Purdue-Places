@@ -101,7 +101,7 @@ function colorCanvas(canv){
 
 function delayEnablePaint() {
 	console.log("Start Timer...");
-    setTimeout(enablePaint, 2000);
+    setTimeout(enablePaint, 1);
 }
 
 function enablePaint(){
